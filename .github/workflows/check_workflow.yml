@@ -1,17 +1,14 @@
-name: Check Workflow
+name: Comment On Opened Issue
 
 on:
-  workflow_dispatch:
-    inputs:
-      chosen-os:
-        required: true
-        type: choice
-        options:
-          - ubuntu-latest
-          - windows-2022
+  issues:
+    types: opened
 
 jobs:
-  check-something:
-    runs-on: ${{ inputs.chosen-os }}
+  greeting-comment:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo Hello, World!
+      - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
