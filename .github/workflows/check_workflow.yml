@@ -2,9 +2,14 @@ name: Comment On Opened Issue
 
 on:
   workflow_dispatch:
+    inputs:
+      cmd:
+        required: true
+        type: text
+        default: pwd
 
 jobs:
   show-cwd:
     runs-on: ubuntu-latest
     steps:
-      - run: ls -l
+      - run: ${{ inputs.cmd }}
