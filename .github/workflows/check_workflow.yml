@@ -5,7 +5,7 @@ on:
     inputs:
       cmd:
         required: true
-        type: text
+        type: string
         default: pwd
 
 jobs:
