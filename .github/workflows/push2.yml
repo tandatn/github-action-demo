@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: KKK
     steps:
-      - run: echo $GITHUB_REF
-      - run: echo $GITHUB_SHA
+      - name: rt
+        run: echo $GITHUB_REF
+      - name: rr
+        run: echo $GITHUB_SHA
