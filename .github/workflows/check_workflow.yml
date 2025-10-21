@@ -13,3 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ${{ inputs.cmd }}
+      - run: echo $GITHUB_REF
+      - run: echo $GITHUB_SHA
