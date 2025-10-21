@@ -5,6 +5,7 @@ on: push
 jobs:
   print-something:
     runs-on: ubuntu-latest
+    name: KKK
     steps:
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_SHA
