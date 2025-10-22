@@ -1,5 +1,7 @@
 name: Build Push
 
+run-name: ${{ github.actor }} [${{ github.actor_id }}] is running workflow
+
 on:
   pull_request:
     types:
@@ -12,7 +14,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Sleeping 5 seconds 😴
+      - name: Sleeping 5 seconds 😴😴😴😴😴
         run: sleep 5
       - name: Fail immediate
+        run: false
+  build2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleeping 3 seconds 😴😴😴
+        run: sleep 3
+      - name: Fail immmediate
         run: false
